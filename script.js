@@ -17,3 +17,23 @@ function performSearch() {
         window.location.href = searchUrl;
     }
 }
+
+// Add this new function at the end of the file
+function createStars() {
+    const starsContainer = document.querySelector('.stars');
+    const starCount = 100;
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.width = `${Math.random() * 3}px`;
+        star.style.height = star.style.width;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 2}s`;
+        starsContainer.appendChild(star);
+    }
+}
+
+// Call the function when the page loads
+window.addEventListener('load', createStars);
